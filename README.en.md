@@ -4,6 +4,8 @@ Turn an **already edited, evidence-linked briefing** into a readable HTML page, 
 
 [中文说明](README.md) · [Input contract](docs/input-format.md) · [Editorial prompt](prompts/editorial.md) · [MIT License](LICENSE)
 
+[Learning notes](docs/learnings/README.md) · [Contributing](CONTRIBUTING.md) · [Share usage feedback](https://github.com/VictorZS/brief-to-podcast/issues/new?template=usage_feedback.yml)
+
 The engine accepts `episode.json` from your own collection and editing workflow. It checks reference consistency, protected factual qualifiers, coverage declarations, and a three-part editorial structure before rendering. It does not connect to Gmail, write a summary with an AI service, schedule jobs, or publish files to a cloud service.
 
 ## Try the fictional example

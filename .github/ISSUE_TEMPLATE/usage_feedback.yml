@@ -1,0 +1,65 @@
+name: Usage feedback / 使用反馈
+description: Tell us what you tried, where it helped, or what stopped you.
+title: "[Feedback] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        无论完成与否，都欢迎说明遇到的具体情况。只描述流程和结果，不需要提交私人材料或音频。
+        这份公开反馈是自愿自报，不是自动使用统计；我们会区分样例体验、协助完成和独立使用。
+        Describe your workflow and result without sharing private inputs. Optional questions can be left blank.
+  - type: textarea
+    id: task
+    attributes:
+      label: Your task / 你想完成什么
+      description: What would you normally do without this tool? Describe the task without identifying people or sharing private content.
+      placeholder: "例如：每周已有一份文字简报，希望在通勤时听完。"
+    validations:
+      required: true
+  - type: dropdown
+    id: input_kind
+    attributes:
+      label: Input used / 使用的材料类型
+      options:
+        - Repository example only / 只运行仓库样例
+        - My own fictional example / 自己编写的虚构样例
+        - My own real task, materials kept private / 自己的真实任务，材料保留在本地
+        - Not yet prepared input / 尚未准备输入
+    validations:
+      required: true
+  - type: dropdown
+    id: completion
+    attributes:
+      label: Completion / 完成方式
+      description: Independent means you ran it without live maintainer help or someone else running it for you. Reading docs and using your own AI tools is fine.
+      options:
+        - Completed independently / 根据说明独立完成
+        - Completed with live guidance / 在他人同步指导下完成
+        - Someone else ran it for me / 由他人代跑
+        - Tried but did not complete / 尝试后尚未完成
+        - Have not tried yet / 尚未尝试
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Result and friction / 结果与障碍
+      description: Did you read or listen to the output? What helped, or exactly where did you stop? A failed attempt is useful feedback too.
+    validations:
+      required: true
+  - type: dropdown
+    id: repeat_usage
+    attributes:
+      label: Repeat use, optional / 再次使用情况，可选
+      description: Self-reported real tasks only; exclude repeated runs of the bundled example. No dates or documents are required.
+      options:
+        - Not sure or prefer not to say / 不确定或不便说明
+        - No completed real task yet / 尚未完成真实任务
+        - One real task so far / 完成过一次真实任务
+        - More than one task within one week / 同一周内完成过多次
+        - Real tasks in two or more different weeks / 在两个或更多不同周完成过真实任务
+  - type: textarea
+    id: value
+    attributes:
+      label: Concrete value, optional / 具体收益，可选
+      description: Describe a step removed, information preserved, or time change. If giving a time estimate, say whether it was measured or recalled, and what you compared it with.
