@@ -1,0 +1,47 @@
+name: Bug report / 问题报告
+description: Report a reproducible problem using fictional or sanitized examples.
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢帮助定位问题。此 Issue 公开可见，请使用仓库样例或重新编写的虚构材料。
+        不要上传私人邮件、原始简报、音频、密钥、个人配置或完整日志。
+        This issue is public. Please use fictional examples and remove sensitive details.
+  - type: input
+    id: version
+    attributes:
+      label: Version / 版本
+      description: Release tag or commit; do not paste local file paths.
+      placeholder: v0.1.0
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment / 运行环境
+      description: Operating system and Python version; include voice or FFmpeg version only if relevant.
+      placeholder: macOS, Python 3.13, text-only
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction / 如何复现
+      description: Give the smallest steps using the repository example or fictional data. Summarize input changes without sharing private material.
+      placeholder: "运行样例时使用的参数，以及能触发问题的最小修改。"
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result / 预期结果
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result / 实际结果
+      description: Include the exit code, relevant status, and a short sanitized error excerpt. Do not paste full logs or private input/output files.
+    validations:
+      required: true

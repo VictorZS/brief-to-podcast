@@ -4,6 +4,8 @@
 
 [English](README.en.md) · [输入格式](docs/input-format.md) · [编辑提示词](prompts/editorial.md) · [MIT License](LICENSE)
 
+[开发与产品 Learning](docs/learnings/README.md) · [参与改进](CONTRIBUTING.md) · [分享使用反馈](https://github.com/VictorZS/brief-to-podcast/issues/new?template=usage_feedback.yml)
+
 ```text
 上游采集与编辑 → episode.json → 结构与证据关联检查 → HTML + 逐字稿
                                                → 本地语音 → 音频校验 → manifest.json
