@@ -1,0 +1,27 @@
+# Local inputs, credentials, environments and generated output
+/config.json
+/config.*.json
+!/config.example.json
+.env
+.env.*
+!.env.example
+.venv/
+.venv-*/
+.tools/
+/output/
+/reports/
+/local/
+/inputs/
+__pycache__/
+*.py[cod]
+.DS_Store
+*.wav
+*.aiff
+*.m4a
+*.mp3
+*.lock
+/examples/manifest.json
+/examples/editorial_check.json
+/examples/transcript.txt
+/examples/index.html
+/examples/mobile_audio.json

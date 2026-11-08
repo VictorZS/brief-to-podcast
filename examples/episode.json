@@ -1,0 +1,238 @@
+{
+  "schema_version": 1,
+  "title": "Fictional briefing: a library pilot and a workshop notice",
+  "overview": "A synthetic example of evidence-linked editing, explicit uncertainty, and a partial notification review. Every event, number, source and message here is fabricated.",
+  "window": {
+    "start": "2026-01-14T00:00:00+00:00",
+    "end": "2026-01-15T00:00:00+00:00",
+    "timezone": "UTC"
+  },
+  "coverage": {
+    "complete": false,
+    "accounts": [
+      {
+        "email": "demo@example.com",
+        "count": 3,
+        "categories": {
+          "newsletter": 2,
+          "notification": 1
+        }
+      }
+    ],
+    "notes": [
+      "All messages and counts are fictional.",
+      "Only this supplied sample was reviewed; no mailbox or historical reminders were accessed."
+    ]
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Fictional library pilot notes",
+      "url": "https://example.com/fictional-library-pilot",
+      "origin": "Synthetic demonstration source",
+      "published_at": "2026-01-14",
+      "access": "full_text"
+    },
+    {
+      "id": "s2",
+      "title": "Fictional workshop notice",
+      "url": "https://example.com/fictional-workshop-notice",
+      "origin": "Synthetic demonstration notice",
+      "published_at": "2026-01-14",
+      "access": "email_body"
+    }
+  ],
+  "signals": [],
+  "actions": [
+    {
+      "id": "a1",
+      "title": "Verify the fictional workshop deadline",
+      "priority": "low",
+      "detail": "This fabricated example illustrates a reminder; there is no real event to book.",
+      "deadline": "2026-01-20",
+      "category": "optional",
+      "status": "unverified",
+      "change": "A deadline appears in the supplied sample notice.",
+      "next_step": "In a real workflow, confirm the notice and deadline with the organizer before acting.",
+      "source_ids": [
+        "s2"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "part": "inbox",
+      "title": "A deliberately incomplete sample",
+      "text": "Fictional demonstration only. Three sample messages were reviewed: two newsletters and one notice. This is not a complete mailbox scan. Historical reminders were not reviewed.",
+      "source_ids": [],
+      "fact_ids": []
+    },
+    {
+      "part": "insights",
+      "title": "A small pilot suggests a question, not a causal conclusion",
+      "text": "In this fictional four-week pilot, electricity use was 8% lower across 12 rooms. The observation does not establish causation: weather and occupied hours were not controlled. A matched comparison could separate a schedule effect from these other explanations. The current evidence supports further testing, not general rollout.",
+      "source_ids": [
+        "s1"
+      ],
+      "fact_ids": [
+        "f1"
+      ]
+    },
+    {
+      "part": "notifications",
+      "title": "Verify the sample deadline",
+      "text": "A fictional workshop notice lists 2026-01-20 as its registration deadline. Verify with the organizer before acting. This is a fabricated exercise, with no actual event or registration obligation; historical reminders have not been checked.",
+      "source_ids": [
+        "s2"
+      ],
+      "fact_ids": [
+        "f2"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "part": "inbox",
+      "title": "Sample coverage",
+      "text": "This is a fictional demonstration, not a real inbox or research report. We reviewed three sample messages: two newsletters and one notice. Coverage is partial, and older reminders have not been checked.",
+      "source_ids": [],
+      "fact_ids": []
+    },
+    {
+      "part": "insights",
+      "title": "Pilot and next question",
+      "text": "A fictional four-week library pilot recorded eight percent lower electricity use across twelve rooms. This small observation cannot establish that the new schedule caused the change; weather and occupancy may also matter. The useful next step is a matched comparison, rather than an immediate expansion. Would the difference remain after matching weather and occupied hours? A new comparison that removes the apparent benefit would change our judgment.",
+      "source_ids": [
+        "s1"
+      ],
+      "fact_ids": [
+        "f1"
+      ],
+      "research_question_ids": [
+        "q1"
+      ]
+    },
+    {
+      "part": "notifications",
+      "title": "Sample notice",
+      "text": "One fictional workshop notice gives a January twentieth registration deadline. The suggested action is to verify the date with the organizer before making plans. This example has no real registration link or obligation. Historical reminders remain unchecked, so this is a partial review.",
+      "source_ids": [
+        "s2"
+      ],
+      "fact_ids": [
+        "f2"
+      ]
+    }
+  ],
+  "briefing": {
+    "total_count": 3,
+    "notification_review": {
+      "status": "partial",
+      "reviewed_current_count": 3,
+      "history_status": "not_run",
+      "scope_note": "Only three fictional supplied messages were reviewed; no complete mailbox scan or history reconciliation was performed."
+    },
+    "research_questions": [
+      {
+        "id": "q1",
+        "story_id": "pilot",
+        "question": "Would the difference remain after matching weather and occupied hours?",
+        "why_it_matters": "A before-and-after observation alone cannot isolate a schedule effect.",
+        "starting_point": "Compare matched rooms and periods using the same measurement definition.",
+        "source_ids": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "editorial": {
+    "version": 3,
+    "thesis": "The fictional pilot justifies a matched comparison, while the sample notice remains an unverified reminder.",
+    "facts": [
+      {
+        "id": "f1",
+        "text": "The fictional four-week pilot recorded 8% lower electricity use across 12 rooms; the observation does not establish causation.",
+        "kind": "observation",
+        "source_ids": [
+          "s1"
+        ],
+        "source_family": "fictional-library-pilot",
+        "evidence_level": "full_text",
+        "scope": "A fabricated four-week observation in 12 rooms.",
+        "caveat": "Weather and occupied hours were not controlled; all values are fictional.",
+        "must_preserve": [
+          "fictional",
+          "four-week",
+          "8%",
+          "12 rooms",
+          "does not establish causation"
+        ]
+      },
+      {
+        "id": "f2",
+        "text": "The fictional workshop notice lists 2026-01-20 as its registration deadline.",
+        "kind": "deadline",
+        "source_ids": [
+          "s2"
+        ],
+        "source_family": "fictional-workshop",
+        "evidence_level": "email_body",
+        "scope": "One fabricated notice, without independent confirmation.",
+        "caveat": "No real event or registration obligation exists.",
+        "must_preserve": [
+          "fictional",
+          "2026-01-20",
+          "Verify"
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "id": "pilot",
+        "question": "Does the sample pilot support expanding the new schedule?",
+        "judgment": "The small observation supports another comparison, not a general rollout.",
+        "mechanism": "Weather and occupancy can change electricity use independently of the schedule.",
+        "implication": "Match measurement periods and occupied hours before expanding the pilot.",
+        "counterargument": "The schedule may have contributed, and a cheap follow-up can still be worthwhile.",
+        "would_change_mind": "A matched comparison that eliminates the difference would remove support for a schedule effect.",
+        "fact_ids": [
+          "f1"
+        ],
+        "priority": {
+          "knowledge_value": 2,
+          "urgency": 0,
+          "reason": "The example teaches the difference between observation and causation, without an urgent decision."
+        },
+        "novelty": {
+          "status": "baseline",
+          "reason": "This is the first and entirely fictional observation in the example."
+        }
+      }
+    ],
+    "compression": {
+      "before_chars": 1182,
+      "after_chars": 945,
+      "protected_fact_ids": [
+        "f1",
+        "f2"
+      ],
+      "removed": [
+        "Generic opening filler and speculative praise of the pilot."
+      ],
+      "restored": [
+        "Retained study duration, sample size, magnitude, causal caveat and unverified deadline."
+      ]
+    },
+    "review": {
+      "status": "pass",
+      "reviewer": "Synthetic example author",
+      "corrections": [
+        "Kept partial coverage explicit and removed causal overstatement."
+      ],
+      "remaining_limits": [
+        "This is a hand-authored fictional fixture, not independently verified evidence.",
+        "Structure checks cannot determine factual accuracy or editorial quality."
+      ]
+    }
+  }
+}

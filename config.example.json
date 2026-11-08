@@ -1,0 +1,9 @@
+{
+  "speech_engine": "macos",
+  "voice": "Samantha",
+  "speaking_rate": 165,
+  "editorial": {
+    "required": true,
+    "pipeline_version": 3
+  }
+}
