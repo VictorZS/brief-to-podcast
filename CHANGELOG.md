@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+
+- Add a fictional Chinese single-fact example and a preparation guide covering
+  source links, character counts, installed voices, and recovery from input errors.
+- Clarify the `audio_status` field and check the Chinese text example in CI.
+- Document Python 3.12+ for macOS audio, which may use extended PCM WAV headers;
+  text output remains supported on Python 3.10+.
+
 ## 0.1.0 — 2026-11-08
 
 First public extraction of the briefing-to-podcast workflow:

@@ -6,6 +6,8 @@ Turn an **already edited, evidence-linked briefing** into a readable HTML page, 
 
 [Learning notes](docs/learnings/README.md) · [Contributing](CONTRIBUTING.md) · [Share usage feedback](https://github.com/VictorZS/brief-to-podcast/issues/new?template=usage_feedback.yml)
 
+For a smaller Chinese example with one source and one fact, see the [Chinese preparation and recovery guide](docs/getting-started.zh.md). It covers editing the input, checking text output, choosing an installed Chinese voice, and correcting stale character counts.
+
 The engine accepts `episode.json` from your own collection and editing workflow. It checks reference consistency, protected factual qualifiers, coverage declarations, and a three-part editorial structure before rendering. It does not connect to Gmail, write a summary with an AI service, schedule jobs, or publish files to a cloud service.
 
 ## Try the fictional example
@@ -20,7 +22,7 @@ python3 scripts/render_episode.py examples/episode.json --output output/demo --t
 
 Open `output/demo/index.html`. Every event, message, number, and source in the example is fictional. The example links use `example.com`; the renderer does not fetch them.
 
-On macOS, generate M4A speech with the installed system voice:
+On macOS, use Python 3.12+ to generate M4A speech with the installed system voice. Older Python versions may reject the WAV format produced by the system voice with `unknown format: 65534`; Python added support for these extended PCM headers in [version 3.12](https://docs.python.org/3/library/wave.html). Confirm `python3 --version` before rendering audio:
 
 ```sh
 python3 scripts/render_episode.py examples/episode.json --output output/demo
@@ -49,7 +51,7 @@ MP3 export verifies the source checksum, encodes mono 44.1 kHz / 96 kbps, decode
 - Empty/silent audio checks, decoding and duration checks, chapter timestamps, and output hashes.
 - Per-output-directory locking, atomic writes, a manifest written last, and verified audio reuse for identical inputs and configuration.
 
-A failed speech run still produces readable outputs. Inspect the command's exit code and `manifest.json`: `ready`, `text_only`, or `failed`. A run in progress can have `processing` status; an interrupted run is not a finished result. Use a separate output directory per episode to preserve history. Trust the manifest and its hashes rather than the existence of an output file.
+A failed speech run still produces readable outputs. Inspect the command's exit code and the `audio_status` field in `manifest.json`: `ready`, `text_only`, or `failed`. A run in progress can have `processing` status; an interrupted run is not a finished result. Use a separate output directory per episode to preserve history. Trust the manifest and its hashes rather than the existence of an output file.
 
 **These checks do not establish factual truth or editorial quality.** They check structure, references, and literal preservation, not the semantic relationship between a claim and its source. Audio checks cannot evaluate pronunciation or listening quality. A successful local run does not establish unattended operation or mobile delivery.
 

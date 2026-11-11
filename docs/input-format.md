@@ -2,6 +2,8 @@
 
 完整且可运行的例子见 [examples/episode.json](../examples/episode.json)。`schema_version` 是数据结构版本，`editorial.version` 是编辑约束版本，两者不同。首版默认配置要求 `schema_version: 1`、`editorial.version: 3`；底层检查器兼容编辑版本 2，但新输入应使用版本 3。
 
+首次准备中文输入可从[逐步指南](getting-started.zh.md)与[单一事实的中文样例](../examples/episode.zh.json)开始；对应的[初稿](../examples/draft.zh.txt)可用于复算字符数。小样例保留相同校验要求，不包含展开的洞察。
+
 所有计数、时间、事实、检查状态和自检结论均由上游提供。引擎检查它们的结构和关系，不查询邮箱、不读取来源网页，也不独立证实这些声明。
 
 ## 顶层字段
@@ -102,6 +104,8 @@
 `review` 包含 `status: "pass"`、`reviewer`、`corrections` 数组、`remaining_limits` 数组。这是上游自检的声明，不能替代独立审稿或事实核查。
 
 ## 配置与退出状态
+
+文本模式需要 Python 3.10+；macOS 音频路径请使用 Python 3.12+，以支持系统语音可能输出的扩展 PCM WAV。遇到 `unknown format: 65534` 时，按[入门指南](getting-started.zh.md#4-在-mac-上生成中文声音)检查实际使用的 Python 版本。
 
 `config.example.json` 包含 `speech_engine: "macos"`、`voice`（已安装的系统语音名称）、`speaking_rate`（80–300 的整数）、`editorial.required: true`、`editorial.pipeline_version: 3`。默认配置作为校验基线；不要通过关闭编辑检查掩盖不完整输入。
 

@@ -6,6 +6,8 @@
 
 [开发与产品 Learning](docs/learnings/README.md) · [参与改进](CONTRIBUTING.md) · [分享使用反馈](https://github.com/VictorZS/brief-to-podcast/issues/new?template=usage_feedback.yml)
 
+第一次准备中文简报？从[一条中文通知开始](docs/getting-started.zh.md)：用虚构小样例走完输入准备、文本检查、中文语音和错误修正。
+
 ```text
 上游采集与编辑 → episode.json → 结构与证据关联检查 → HTML + 逐字稿
                                                → 本地语音 → 音频校验 → manifest.json
@@ -26,7 +28,7 @@
 
 ## 运行虚构样例
 
-需要 Python 3.10+。文本模式支持 macOS、Linux；核心仅使用 Python 标准库。音频合成需要 macOS 自带的 `say` 和 `afconvert`，以及已经安装的系统语音。v0.1 不支持 Windows。
+文本模式需要 Python 3.10+，支持 macOS、Linux；核心仅使用 Python 标准库。音频合成请使用 Python 3.12+，并需要 macOS 自带的 `say` 和 `afconvert`，以及已经安装的系统语音。较旧的 Python 可能无法读取系统语音输出的 WAV，排查步骤见[中文指南](docs/getting-started.zh.md#4-在-mac-上生成中文声音)。v0.1 不支持 Windows。
 
 ```sh
 git clone https://github.com/VictorZS/brief-to-podcast.git
@@ -48,14 +50,16 @@ open output/demo/index.html
 ```sh
 cp config.example.json config.local.json
 # 编辑 config.local.json 中的 voice；speaking_rate 范围是 80–300。
-python3 scripts/render_episode.py examples/episode.json --config config.local.json --output output/demo
+python3 scripts/render_episode.py examples/episode.zh.json --config config.local.json --output output/demo-zh
 ```
 
-选择适合输入语言的语音；引擎不会下载语音或静默切换到其他引擎。示例口播约 142 个英文单词，合成需要一些时间。请以命令退出码和 `manifest.json` 为准：`ready` 表示音频检查通过，`text_only` 表示仅生成文本，`failed` 表示语音失败。失败时页面显示错误，不链接旧节目音频。运行中可能短暂出现 `processing`；中断后不要把这个状态当作成品。
+选择适合输入语言的语音；引擎不会下载语音或静默切换到其他引擎。英文示例口播约 142 个单词，合成需要一些时间。请以命令退出码和 `manifest.json` 的 `audio_status` 字段为准：`ready` 表示音频检查通过，`text_only` 表示仅生成文本，`failed` 表示语音失败。失败时页面显示错误，不链接旧节目音频。运行中可能短暂出现 `processing`；中断后不要把这个状态当作成品。
 
 ## 可选 MP3
 
 默认音频是 M4A。需要 MP3 时，另行安装含 `libmp3lame` 编码器的 FFmpeg 并放入 `PATH`，或在隔离的 Python 环境安装可选依赖：
+
+下面的导出命令使用英文样例目录 `output/demo`。导出中文样例时改用 `output/demo-zh`；若按逐步指南操作，则使用 `output/first-zh`，避免导出另一份节目。
 
 ```sh
 python3 -m venv .venv
