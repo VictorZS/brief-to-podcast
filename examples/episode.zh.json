@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "title": "虚构中文简报：图书室的一次开放安排",
+  "overview": "这是手工编写的中文入门样例，只有一条虚构通知。图书室、日期、时间、来源和消息数量均为虚构；没有真实活动，也没有用户使用效果证据。",
+  "window": {
+    "start": "2026-01-14T00:00:00+08:00",
+    "end": "2026-01-15T00:00:00+08:00",
+    "timezone": "Asia/Shanghai"
+  },
+  "coverage": {
+    "complete": false,
+    "accounts": [
+      {
+        "email": "demo@example.com",
+        "count": 1,
+        "categories": {
+          "notification": 1
+        }
+      }
+    ],
+    "notes": [
+      "只整理本文件内的一条虚构通知，未连接或扫描任何邮箱。",
+      "demo@example.com 是展示标签；未检查历史提醒，不表示现实生活中的通知已经覆盖完整。"
+    ]
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "title": "虚构图书室通知：一次开放安排",
+      "url": "https://example.com/fictional-library-hours",
+      "origin": "样例作者编写的虚构通知；完整内容为事实 f1 的一句话",
+      "published_at": "2026-01-14",
+      "access": "full_text"
+    }
+  ],
+  "signals": [],
+  "actions": [],
+  "sections": [
+    {
+      "part": "inbox",
+      "title": "这一条通知说了什么",
+      "text": "虚构通知：样例图书室在 2026-01-15 开放至 20:00，仅当日有效，不代表长期调整。本次只整理这一条练习材料，未扫描邮箱；来源链接是占位符，不指向真实通知。",
+      "source_ids": [
+        "s1"
+      ],
+      "fact_ids": [
+        "f1"
+      ]
+    },
+    {
+      "part": "insights",
+      "title": "材料不足，暂不展开洞察",
+      "text": "只有一次时间安排，没有效果记录或对照材料，不能推断安排更受欢迎，也不编写额外研究结论。",
+      "source_ids": [],
+      "fact_ids": []
+    },
+    {
+      "part": "notifications",
+      "title": "没有真实待办，历史提醒未检查",
+      "text": "这是虚构练习，没有需要执行的真实活动。只复核了样例中的一条通知，历史提醒未检查；空待办列表不表示现实中没有其他安排。",
+      "source_ids": [],
+      "fact_ids": []
+    }
+  ],
+  "segments": [
+    {
+      "part": "inbox",
+      "title": "虚构通知与范围",
+      "text": "这是一份虚构练习，没有真实活动。样例图书室的通知说，二零二六年一月十五日开放至晚上八点，仅当日有效，不代表长期调整。本次只整理这一条虚构通知，没有扫描邮箱。",
+      "source_ids": [
+        "s1"
+      ],
+      "fact_ids": [
+        "f1"
+      ]
+    },
+    {
+      "part": "insights",
+      "title": "不强行展开洞察",
+      "text": "目前只有一条时间安排，没有效果记录或对照材料，因此不展开洞察，也不推断这项安排更受欢迎。",
+      "source_ids": [],
+      "fact_ids": []
+    },
+    {
+      "part": "notifications",
+      "title": "练习边界与提醒范围",
+      "text": "这份练习没有需要执行的真实待办。历史提醒没有检查，不能据此判断现实中是否还有其他安排。",
+      "source_ids": [],
+      "fact_ids": []
+    }
+  ],
+  "briefing": {
+    "total_count": 1,
+    "notification_review": {
+      "status": "partial",
+      "reviewed_current_count": 1,
+      "history_status": "not_run",
+      "scope_note": "只复核本文件内的一条虚构通知；没有访问邮箱，也没有检查历史提醒或任何真实活动。"
+    },
+    "research_questions": []
+  },
+  "editorial": {
+    "version": 3,
+    "thesis": "保留这条虚构通知的日期、开放时间与适用范围，材料不足时不补造洞察或真实待办。",
+    "facts": [
+      {
+        "id": "f1",
+        "text": "虚构通知：样例图书室在 2026-01-15 开放至 20:00，仅当日有效，不代表长期调整。",
+        "kind": "context",
+        "source_ids": [
+          "s1"
+        ],
+        "source_family": "fictional-library-hours",
+        "evidence_level": "full_text",
+        "scope": "仅为一条手工编写的虚构通知，安排限于所列日期。",
+        "caveat": "图书室、日期和开放时间均为虚构；没有真实活动或外部核验。",
+        "must_preserve": [
+          "虚构",
+          "2026-01-15",
+          "20:00",
+          "仅当日有效",
+          "不代表长期调整"
+        ]
+      }
+    ],
+    "stories": [],
+    "no_story_reason": "只有一条虚构时间安排，没有效果记录或对照证据，不能支持进一步的因果解释或产品判断。",
+    "compression": {
+      "before_chars": 213,
+      "after_chars": 169,
+      "protected_fact_ids": [
+        "f1"
+      ],
+      "removed": [
+        "删除初稿中“接下来，我们会仔细看一看这条通知，希望把这条消息讲得更清楚。”的开场说明。",
+        "删除重复说明范围的“目前先把已知范围说明白。”。"
+      ],
+      "restored": []
+    },
+    "review": {
+      "status": "pass",
+      "reviewer": "虚构样例编写者的文本自检",
+      "corrections": [
+        "书面稿保留日期、时间和仅当日有效的限制；口播使用对应的自然读法。",
+        "保持通知复核为 partial，历史提醒为 not_run；不把虚构练习写成真实待办。"
+      ],
+      "remaining_limits": [
+        "本样例为手工编写的虚构材料；full_text 仅指读过本文件内完整的虚构通知，不表示抓取或核验过占位网页。",
+        "结构和引用检查不能证明事实为真、听感合格或普通使用者更容易完成任务。"
+      ]
+    }
+  }
+}

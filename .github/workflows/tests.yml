@@ -22,3 +22,5 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Render the fictional example without audio
         run: python scripts/render_episode.py examples/episode.json --output output/ci --text-only
+      - name: Render the Chinese single-fact example without audio
+        run: python scripts/render_episode.py examples/episode.zh.json --output output/ci-zh --text-only
