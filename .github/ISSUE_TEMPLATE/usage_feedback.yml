@@ -1,5 +1,5 @@
 name: Usage feedback / 使用反馈
-description: Tell us what you tried, where it helped, or what stopped you.
+description: 描述你尝试的任务、有帮助的地方或卡住的步骤。Tell us what you tried, where it helped, or what stopped you.
 title: "[Feedback] "
 body:
   - type: markdown
@@ -7,12 +7,15 @@ body:
       value: |
         无论完成与否，都欢迎说明遇到的具体情况。只描述流程和结果，不需要提交私人材料或音频。
         这份公开反馈是自愿自报，不是自动使用统计；我们会区分样例体验、协助完成和独立使用。
+        标为“可选”的问题可以留空。
         Describe your workflow and result without sharing private inputs. Optional questions can be left blank.
   - type: textarea
     id: task
     attributes:
       label: Your task / 你想完成什么
-      description: What would you normally do without this tool? Describe the task without identifying people or sharing private content.
+      description: |
+        不用这个工具时，你通常会怎么处理？只描述任务，不要提供任何人的身份信息或私人内容。
+        What would you normally do without this tool? Describe the task without identifying people or sharing private content.
       placeholder: "例如：每周已有一份文字简报，希望在通勤时听完。"
     validations:
       required: true
@@ -31,7 +34,9 @@ body:
     id: completion
     attributes:
       label: Completion / 完成方式
-      description: Independent means you ran it without live maintainer help or someone else running it for you. Reading docs and using your own AI tools is fine.
+      description: |
+        “独立完成”指你自行运行，没有维护者实时指导，也没有他人代跑。可以查阅说明或使用自己的 AI 工具。
+        Independent means you ran it without live maintainer help or someone else running it for you. Reading docs and using your own AI tools is fine.
       options:
         - Completed independently / 根据说明独立完成
         - Completed with live guidance / 在他人同步指导下完成
@@ -44,14 +49,18 @@ body:
     id: result
     attributes:
       label: Result and friction / 结果与障碍
-      description: Did you read or listen to the output? What helped, or exactly where did you stop? A failed attempt is useful feedback too.
+      description: |
+        你是否阅读或收听了结果？哪一步有帮助，或具体停在哪一步？未完成的尝试也有反馈价值。
+        Did you read or listen to the output? What helped, or exactly where did you stop? A failed attempt is useful feedback too.
     validations:
       required: true
   - type: dropdown
     id: repeat_usage
     attributes:
       label: Repeat use, optional / 再次使用情况，可选
-      description: Self-reported real tasks only; exclude repeated runs of the bundled example. No dates or documents are required.
+      description: |
+        只填写你自报的真实任务使用情况；重复运行仓库样例不计入。无需提供日期或文档。
+        Self-reported real tasks only; exclude repeated runs of the bundled example. No dates or documents are required.
       options:
         - Not sure or prefer not to say / 不确定或不便说明
         - No completed real task yet / 尚未完成真实任务
@@ -62,4 +71,6 @@ body:
     id: value
     attributes:
       label: Concrete value, optional / 具体收益，可选
-      description: Describe a step removed, information preserved, or time change. If giving a time estimate, say whether it was measured or recalled, and what you compared it with.
+      description: |
+        描述少做了哪一步、保留了哪些信息，或耗时如何变化。若估算耗时，请说明是实际计时还是事后回忆，以及比较的基准。
+        Describe a step removed, information preserved, or time change. If giving a time estimate, say whether it was measured or recalled, and what you compared it with.
